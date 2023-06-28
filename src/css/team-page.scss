@@ -1,0 +1,39 @@
+.team-page-container {
+    margin: 50px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 250px);
+    grid-template-areas: 
+        "side-nav timeline timeline timeline"
+        "side-nav goals goals meetings"
+        "side-nav goals goals calendar";
+    align-items: center;
+    justify-items: center;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.side-bar {
+    grid-area: side-nav;
+    background-color: antiquewhite;
+}
+
+.timeline {
+    grid-area: timeline;
+    background-color: beige;
+}
+
+.goals {
+    grid-area: goals;
+    background-color: aliceblue;
+}
+
+.meetings {
+    grid-area: meetings;
+    background-color: azure;
+}
+
+.calendar {
+    grid-area: calendar;
+    background-color: aquamarine;
+}
