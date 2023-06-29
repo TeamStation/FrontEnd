@@ -1,5 +1,5 @@
 .team-page-container {
-    margin: 50px 40px;
+    margin: 50px 50px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 250px);
@@ -20,7 +20,7 @@
 
 .timeline {
     grid-area: timeline;
-    background-color: beige;
+    width: 100%;
 }
 
 .goals {
@@ -37,3 +37,7 @@
     grid-area: calendar;
     background-color: aquamarine;
 }
+
+// .timeline-date-header {
+//     background-color: transparent;
+// }
