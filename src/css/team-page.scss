@@ -10,7 +10,7 @@
     align-items: center;
     justify-items: center;
     row-gap: 20px;
-    column-gap: 20px;
+    column-gap: 40px;
 
     .side-bar {
         grid-area: side-nav;
@@ -28,25 +28,25 @@
         width: 100%;
         height: 100%;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
-        border-radius: 1rem;
+        border-radius: 20px;
         padding: 30px 30px;
 
         .goals-list-container .goals-item {
             box-sizing: border-box;
             box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
-            border-radius: 1rem;
-            padding: 15px 15px;
+            border-radius: 10px;
+            padding: 30px 30px;
             margin-bottom: 20px;
             cursor: pointer;
         }
     }
     
-    .goals-category-container {
+    .goals-category-container, .meetings-category-container {
         display: flex;
         color: #BEBEBE;
         margin-bottom: 30px;
 
-        .goals-category {
+        .goals-category, .meetings-category {
             font-size: 16px;
             margin-right: 10px;
             cursor: pointer;
@@ -62,9 +62,25 @@
         }
     }
 
-    .meetings {
+    .meetings-container {
+        box-sizing: border-box;
         grid-area: meetings;
-        background-color: azure;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+        border-radius: 20px;
+        padding: 30px 30px;
+
+        .meetings-list-container {
+            .meeting-item {
+                box-sizing: border-box;
+                background-color: #CEE5FF;
+                border-radius: 10px;
+                padding: 20px 25px;
+                margin-bottom: 10px;
+                cursor: pointer;
+            }
+        }
     }
 
     .calendar {
