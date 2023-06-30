@@ -45,7 +45,7 @@ const TimeLine = () => {
   ];
 
   return (
-    <div className="timeline">
+    <div className="timeline-container">
       <Timeline
         groups={groups}
         items={items}
