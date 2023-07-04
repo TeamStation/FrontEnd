@@ -19,7 +19,7 @@ function SignUp() {
           <input type="email" placeholder="이메일" />
           <input type="name" placeholder="이름" />
           <input type="password" placeholder="비밀번호" />
-          <input type="password" placeholder="비밀번호 확인" />
+          <input type="password" placeholder="비밀번호확인" />
           <br />
           <Link to="/mypage">
             <button
