@@ -1,8 +1,8 @@
 .team-page-container {
-    margin: 50px 50px;
+    margin: 0 50px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 250px);
+    grid-template-rows: repeat(3, 300px);
     grid-template-areas:
         "side-nav timeline timeline timeline"
         "side-nav goals goals meetings"
@@ -85,6 +85,6 @@
 
     .calendar {
         grid-area: calendar;
-        background-color: aquamarine;
+        // background-color: aquamarine;
     }
 }
