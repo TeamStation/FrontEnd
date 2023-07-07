@@ -1,0 +1,50 @@
+.meeting-note-container {
+    margin: 60px;
+
+    .search-tab {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        background-color: #eaeaea;
+        border-radius: 30px;
+        border: transparent;
+    }
+
+    .meeting-note-list-container {
+        margin-top: 50px;
+    }
+}
+
+.meeting-note-item {
+    cursor: pointer;
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-columns: 2fr, 2fr, 2fr, 1fr;
+    grid-template-areas: "title date tag completed";
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 20px;
+
+    .title {
+        padding-left: 30px;
+        grid-area: title;
+        font-weight: bold;
+        color: black;
+    }
+
+    .date {
+        grid-area: date;
+        color: #7D7D7D;
+    }
+
+    .tag {
+        grid-area: tag;
+        color: #BEBEBE;
+    }
+
+    .completed {
+        grid-area: completed;
+    }
+}

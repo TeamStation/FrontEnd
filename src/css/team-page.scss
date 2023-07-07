@@ -1,20 +1,41 @@
 .team-page-container {
-    margin: 50px 50px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 250px);
-    grid-template-areas:
-        "side-nav timeline timeline timeline"
-        "side-nav goals goals meetings"
-        "side-nav goals goals calendar";
-    align-items: center;
-    justify-items: center;
-    row-gap: 20px;
-    column-gap: 40px;
+
+    &.mainView {
+        margin-right: 100px;
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr 2fr;
+        grid-template-rows: repeat(3, 300px);
+        grid-template-areas:
+            "side-nav timeline timeline timeline"
+            "side-nav goals goals meetings"
+            "side-nav goals goals calendar";
+        align-items: center;
+        justify-items: center;
+        row-gap: 10px;
+        column-gap: 40px;
+    }
+
+    &.meetingNotesView {
+        // margin-right: 100px;
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr 2fr;
+        grid-template-rows: repeat(3, 300px);
+        grid-template-areas:
+            "side-nav meetingNotes meetingNotes meetingNotes"
+            "side-nav meetingNotes meetingNotes meetingNotes"
+            "side-nav meetingNotes meetingNotes meetingNotes";
+        // align-items: center;
+        // justify-items: center;
+        // row-gap: 10px;
+        // column-gap: 40px;
+
+        .meeting-note-container {
+            grid-area: meetingNotes;
+        }
+    }
 
     .side-bar {
         grid-area: side-nav;
-        background-color: antiquewhite;
     }
 
     .timeline-container {
@@ -40,18 +61,20 @@
             cursor: pointer;
         }
     }
-    
-    .goals-category-container, .meetings-category-container {
+
+    .goals-category-container,
+    .meetings-category-container {
         display: flex;
         color: #BEBEBE;
         margin-bottom: 30px;
 
-        .goals-category, .meetings-category {
+        .goals-category,
+        .meetings-category {
             font-size: 16px;
             margin-right: 10px;
             cursor: pointer;
 
-            & + .selected {
+            &+.selected {
                 color: black;
             }
         }
@@ -85,6 +108,6 @@
 
     .calendar {
         grid-area: calendar;
-        background-color: aquamarine;
+        // background-color: aquamarine;
     }
 }
