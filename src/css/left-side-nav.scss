@@ -23,24 +23,20 @@
     .member-profile-container {
         display: flex;
 
-        .members {
+        .members {}
 
-        }
-
-        .member-add-btn {
-
-        }
+        .member-add-btn {}
 
         margin-bottom: 100px;
     }
-    
-    .meeting-tab, .docs-tab {
+
+    .meeting-tab,
+    .docs-tab {
         font-size: 1.25rem;
         padding: 25px 0;
         cursor: pointer;
         width: 100%;
         text-align: center;
-        // background-color: blue;
     }
 
     .vertical-line {
