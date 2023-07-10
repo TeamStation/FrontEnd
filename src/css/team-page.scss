@@ -82,6 +82,7 @@
         .goals-category-add-btn {
             cursor: pointer;
             margin-left: auto;
+
         }
     }
 
@@ -93,6 +94,7 @@
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
         border-radius: 20px;
         padding: 30px 30px;
+        overflow-y: scroll;
 
         .meetings-list-container {
             .meeting-item {
@@ -103,6 +105,16 @@
                 margin-bottom: 10px;
                 cursor: pointer;
             }
+        }
+
+        .meeting-add-btn {
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #F6FAFF;
+            border-radius: 10px;
+            padding: 20px 25px;
+            cursor: pointer;
+            text-align: center;
         }
     }
 

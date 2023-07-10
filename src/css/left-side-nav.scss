@@ -22,10 +22,29 @@
 
     .member-profile-container {
         display: flex;
+        align-items: center;
+        justify-content: center;
 
-        .members {}
+        .members {
+            .profile-image {
+                width: 45px;
+                height: 45px;
+                border-radius: 45px;
+                box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+                margin: 0;
+                position: relative;
+                left: -30;
+            }
+        }
 
-        .member-add-btn {}
+        .member-add-btn {
+            width: 19px;
+            height: 19px;
+            background-image: url("../images/member_add_button.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer
+        }
 
         margin-bottom: 100px;
     }

@@ -1,5 +1,6 @@
 import React from "react";
 import MeetingList from "./MeetingList";
+import { ReactComponent as AddButton } from "../../images/add_button.svg";
 
 const Meetings = () => {
   // API 써서 선택한 카테고리의 아이템들 불러오기
@@ -29,6 +30,10 @@ const Meetings = () => {
     console.log("회의 클릭");
   };
 
+  const onAddBtnClick = () => {
+    console.log("회의 추가 버튼 클릭");
+  };
+
   return (
     <div className="meetings-container">
       <div className="meetings-category-container">
@@ -37,6 +42,9 @@ const Meetings = () => {
       </div>
       <div className="meetings-list-container">
         <MeetingList meetings={meetings} />
+      </div>
+      <div className="meeting-add-btn" onClick={onAddBtnClick}>
+        <AddButton />
       </div>
     </div>
   );
