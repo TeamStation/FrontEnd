@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/left-side-nav.scss";
+import Modal from "react-modal";
 
 const SideBar = ({ setPageView, setMainView, setMeetingNotesView }) => {
   const onClickMeetingTab = () => {
@@ -8,8 +9,44 @@ const SideBar = ({ setPageView, setMainView, setMeetingNotesView }) => {
     setMeetingNotesView(true);
   };
 
-  const onClickMemberAddButton = () => {
-    console.log("팀원 추가 버튼 클릭");
+  const customModalStyles = {
+    content: {
+      top: "30%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      width: "50%",
+      transform: "translate(-50%, -50%)",
+      backgroundColor: "white",
+      padding: "30px 20px 60px 20px",
+      borderRadius: "20px",
+      boxShadow: "0px 0px 30px 0px rgba(0, 0, 0, 0.15)",
+    },
+    overlay: {
+      position: "fixed",
+      inset: "0px",
+      backgroundColor: "rgba(255, 255, 255, 0.75)",
+      zIndex: "100",
+    },
+  };
+
+  Modal.setAppElement("#root");
+
+  let subtitle;
+  let emailForm;
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const afterOpenModal = () => {
+    subtitle.style.color = "black";
+    subtitle.style.textAlign = "center";
+    emailForm.style.textAlign = "center";
+  };
+  const closeModal = () => {
+    setIsOpen(false);
   };
 
   const memberList = [
@@ -76,8 +113,24 @@ const SideBar = ({ setPageView, setMainView, setMeetingNotesView }) => {
                   left: `${15 * parseInt(memberList.length / 2) * -1}px`,
                 }
           }
-          onClick={onClickMemberAddButton}
+          onClick={openModal}
         ></div>
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={customModalStyles}
+          contentLabel="팀원 추가하기"
+        >
+          <button onClick={closeModal} className="close">
+            x
+          </button>
+          <h2 ref={(_subtitle) => (subtitle = _subtitle)}>팀원 초대하기</h2>
+          <form ref={(_email_form) => (emailForm = _email_form)}>
+            <input placeholder="이메일을 입력하세요" />
+            <button className="modal-invite-btn">초대</button>
+          </form>
+        </Modal>
       </div>
       <div className="meeting-tab" onClick={onClickMeetingTab}>
         회의
