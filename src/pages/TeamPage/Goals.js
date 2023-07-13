@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import GoalsList from "./GoalsList";
+import { ReactComponent as AddButton } from "../../images/add_button.svg";
 
 const Goals = () => {
   const category = ["디자인", "개발"];
@@ -47,7 +48,7 @@ const Goals = () => {
       <div className="goals-category-container">
         {categoryList}
         <div className="goals-category-add-btn" onClick={onClick}>
-          Add
+          <AddButton />
         </div>
       </div>
       <div className="goals-list-container">

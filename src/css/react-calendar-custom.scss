@@ -19,7 +19,7 @@
 }
 
 .react-calendar-timeline .rct-item:hover {
-  z-index: 88;
+  // z-index: 88;
 }
 
 .react-calendar-timeline .rct-item .rct-item-content {
@@ -69,7 +69,7 @@
 .react-calendar-timeline .rct-vertical-lines .rct-vl {
   position: absolute;
   border-left: 1px solid #d9d9d9;
-  z-index: 30;
+  // z-index: 30;
 }
 
 .react-calendar-timeline .rct-vertical-lines .rct-vl.rct-vl-first {
@@ -91,9 +91,9 @@
 
 .react-calendar-timeline .rct-horizontal-lines .rct-hl-even,
 .react-calendar-timeline .rct-horizontal-lines .rct-hl-odd {
-//   border-bottom: 1px solid #bbb;
+  //   border-bottom: 1px solid #bbb;
   box-sizing: border-box;
-  z-index: 40;
+  // z-index: 40;
   background: #F9F9F9;
 }
 
@@ -101,7 +101,7 @@
   position: absolute;
   width: 2px;
   background: #2196f3;
-  z-index: 51;
+  // z-index: 51;
 }
 
 .react-calendar-timeline .rct-dateHeader {
