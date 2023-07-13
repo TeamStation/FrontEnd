@@ -1,0 +1,49 @@
+.my-page-container {
+  margin: 50px 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 250px);
+  grid-template-areas:
+    "status . . user"
+    "to-do project project project"
+    "to-do project project project";
+  align-items: center;
+  justify-items: center;
+  row-gap: 20px;
+  column-gap: 40px;
+
+  .project-state {
+    grid-area: status;
+    width: 150px;
+    height: 105px;
+    border-radius: 3px;
+    // background-color: red;
+    //  align:"center",
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  .project-container {
+    grid-area: project;
+    width: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    // background-color: #F8F8F8;
+  }
+
+  .project-title-container {
+    justify-self: flex-start;
+    font-size: 18px;
+    color: white;
+    background-color: #3d96ff;
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-left: 18px;
+    padding-bottom: 8px;
+    width: 95%;
+  }
+
+  .user-info {
+    grid-area: user;
+  }
+}
