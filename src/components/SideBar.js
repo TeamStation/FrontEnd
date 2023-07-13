@@ -16,35 +16,56 @@ const SideBar = ({ setPageView, setMainView, setMeetingNotesView }) => {
       right: "auto",
       bottom: "auto",
       marginRight: "-50%",
-      width: "50%",
+      width: "70%",
+      maxWidth: "700px",
       transform: "translate(-50%, -50%)",
       backgroundColor: "white",
-      padding: "30px 20px 60px 20px",
+      padding: "15px 10px 60px 10px",
       borderRadius: "20px",
       boxShadow: "0px 0px 30px 0px rgba(0, 0, 0, 0.15)",
     },
     overlay: {
       position: "fixed",
       inset: "0px",
-      backgroundColor: "rgba(255, 255, 255, 0.75)",
+      backgroundColor: "rgba(217, 217, 217, 0.50)",
       zIndex: "100",
     },
   };
 
   Modal.setAppElement("#root");
 
-  let subtitle;
-  let emailForm;
+  let subtitle, emailForm, inputForm, inviteBtn, closeBtn;
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
     setIsOpen(true);
   };
+
   const afterOpenModal = () => {
     subtitle.style.color = "black";
     subtitle.style.textAlign = "center";
+    subtitle.style.margin = "60px auto 50px auto";
     emailForm.style.textAlign = "center";
+    inputForm.style.width = "50%";
+    inputForm.style.height = "10px";
+    inputForm.style.padding = "20px 10px";
+    inputForm.style.borderRadius = "10px";
+    inputForm.style.border = "2px solid #A6A6A6";
+    inputForm.style.marginRight = "5px";
+    inviteBtn.style.width = "15%";
+    inviteBtn.style.padding = "16px 18px";
+    inviteBtn.style.borderRadius = "10px";
+    inviteBtn.style.border = "2px solid #A6A6A6";
+    inviteBtn.style.cursor = "pointer";
+    inviteBtn.style.color = "white";
+    inviteBtn.style.backgroundColor = "#3D96FF";
+    inviteBtn.style.border = "2px solid #3D96FF";
+    closeBtn.style.backgroundColor = "transparent";
+    closeBtn.style.float = "right";
+    closeBtn.style.border = "transparent";
+    closeBtn.style.cursor = "pointer";
   };
+
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -122,13 +143,30 @@ const SideBar = ({ setPageView, setMainView, setMeetingNotesView }) => {
           style={customModalStyles}
           contentLabel="팀원 추가하기"
         >
-          <button onClick={closeModal} className="close">
-            x
+          <button
+            onClick={closeModal}
+            ref={(_close_button) => (closeBtn = _close_button)}
+          >
+            <img
+              src={require("../images/modal_close_button.png")}
+              alt="close"
+              style={{ width: "19px", height: "19px" }}
+            />
           </button>
-          <h2 ref={(_subtitle) => (subtitle = _subtitle)}>팀원 초대하기</h2>
+          <div>
+            <h2 ref={(_subtitle) => (subtitle = _subtitle)}>팀원 초대하기</h2>
+          </div>
           <form ref={(_email_form) => (emailForm = _email_form)}>
-            <input placeholder="이메일을 입력하세요" />
-            <button className="modal-invite-btn">초대</button>
+            <input
+              ref={(_input_form) => (inputForm = _input_form)}
+              placeholder="이메일을 입력하세요"
+            />
+            <button
+              ref={(_invite_button) => (inviteBtn = _invite_button)}
+              className="modal-invite-btn"
+            >
+              초대
+            </button>
           </form>
         </Modal>
       </div>
