@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../css/auth-page.scss";
+import API from "../../utils/API";
 
 function SignUp() {
   const [authState, setAuthState] = useState(false);
   const [emailInput, setEmailInput] = useState("");
+
   const emailAuthClick = (e) => {
     e.preventDefault();
     setAuthState(true);
 
-    // API 작성
+    API.post("/api/emailConfirm", null, {
+      params: {
+        email: emailInput,
+      },
+    }).then((res) => console.log(res));
   };
 
   const handleEmailInput = (e) => {
     setEmailInput(e.target.value);
-  };
-
-  const signUpBtnClick = (e) => {
-    // API 작성
   };
 
   return (
@@ -45,9 +47,7 @@ function SignUp() {
                 className="auth-code-input-box"
               />
               <Link to="/signup" state={{ email: emailInput }}>
-                <button className="signup-btn" onClick={signUpBtnClick}>
-                  회원가입
-                </button>
+                <button className="signup-btn">회원가입</button>
               </Link>
             </form>
           </div>

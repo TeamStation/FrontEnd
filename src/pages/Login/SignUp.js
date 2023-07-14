@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "../../css/signup-page.scss";
+import API from "../../utils/API";
 
 function SignUp() {
   const location = useLocation();
   const email = location.state?.email;
+  const navigate = useNavigate();
 
   const [nameInput, setNameInput] = useState("");
   const [pwInput, setPwInput] = useState("");
@@ -36,6 +38,10 @@ function SignUp() {
       };
 
       // API 요청 후 마이페이지로 이동
+      API.post("/api/members/signup", request).then((res) => {
+        console.log(res);
+        navigate("/mypage");
+      });
     }
   };
 
