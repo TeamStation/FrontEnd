@@ -1,0 +1,70 @@
+.signup-container {
+  margin-top: 200px;
+  text-align: center;
+
+  .signup-title {
+    font-size: 50px;
+    font-weight: bold;
+    padding-bottom: 30px;
+  }
+
+  .email-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .email-input-box {
+    box-sizing: border-box;
+    width: 428px;
+    height: 50px;
+    margin-right: 10px;
+    padding-left: 15px;
+    border-radius: 10px;
+    border: 2px solid #a6a6a6;
+    background-color: #fafafa;
+  }
+
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .auth-code-input-box {
+    box-sizing: border-box;
+    width: 588px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    background-color: "#3D96FF";
+    border-radius: 10px;
+    border: 2px solid #a6a6a6;
+    background-color: #fafafa;
+  }
+
+  .email-auth-btn,
+  .signup-btn {
+    font-weight: bold;
+    color: white;
+    background-color: #3d96ff;
+    border-radius: 10px;
+    border: 2px solid #3d96ff;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+  .signup-btn {
+    width: 588px;
+  }
+
+  .after-email-auth-container {
+    .guide-text {
+      display: block;
+      color: #8d8d8d;
+      margin-bottom: 50px;
+    }
+  }
+}
